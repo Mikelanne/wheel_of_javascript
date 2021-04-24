@@ -21,12 +21,26 @@ html {
     margin: 2rem 2rem;
     box-shadow: 4px 4px 4px 4px #026914;
     border-radius: 15px 50px;
+    grid-column-gap: 5px
+  }
+
+  .card-back {
+    text-align: center;
+    border: rgb(11, 22, 170) solid 1px;
+    padding: 1rem;
+    width: 20rem;
+    height: 25rem;
+    display: inline-grid;
+    margin: 2rem 2rem;
+    box-shadow: 4px 4px 4px 4px #026914;
+    border-radius: 50px 15px;
+    grid-column-gap: 5px
   }
 
   .character-avatar {
     justify-self: center;
-    height: 12rem;
-    width: 20rem;
+    height: 18rem;
+    width: 18rem;
   }
   
   button {
@@ -40,11 +54,16 @@ html {
     font-size: 16px;
   }
   
-  .activated {
-    background-color:rgb(40, 160, 230);
-    border-radius: 0px 5px 5px 0px;
-    border: 1px solid;
-    color: white;
+  .hover {
+    text-align: center;
+    border: rgb(11, 22, 170) solid 1px;
+    padding: 1rem;
+    width: 20rem;
+    height: 25rem;
+    display: inline-grid;
+    margin: 2rem 2rem;
+    box-shadow: 6px 6px 6px 6px #026914;
+    border-radius: 15px 50px;
   }
   
   .btn:hover {

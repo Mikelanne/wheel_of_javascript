@@ -19,6 +19,30 @@ fetch('http://localhost:3000/characters')
             header.innerText = `${char.attributes.name}`
             card.append(header)
             card.append(img)
+            card.addEventListener("click", displayBackOfCard)
+
+            function displayBackOfCard(event) {
+                const card = event.currentTarget
+                if (card.className === "card") {
+                    img.remove()
+                    header.innerText =`${char.attributes.name} 
+                    ${char.attributes.title}`
+                    const p = document.createElement("p")
+                    p.innerText = `ta'veren: ${char.attributes.ta_veren}
+                    Home: ${char.attributes.home}
+                    Abilites: ${char.attributes.abilities}`
+                    card.append(p)
+                    card.className = "card-back"
+                } else {
+                    card.className = "card"
+                    card.id = char.id
+                    img.src = avatar
+                    img.className = "character-avatar"
+                    cardContainer.appendChild(card)
+                    header.innerText = `${char.attributes.name}`
+                    card.append(header)
+                    card.append(img)
+                }
+            }
         })
-      
     }
