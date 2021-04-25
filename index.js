@@ -28,6 +28,7 @@ fetch('http://localhost:3000/characters')
                     header.innerHTML =`${char.attributes.name}<br>
                     <i>${char.attributes.title}</i>`
                     const p = document.createElement("p")
+                    p.className = "card-text"
                     p.innerHTML = `ta'veren: <i>${char.attributes.ta_veren}</i> <br>
                     Home: <i>${char.attributes.home}</i> <br>
                     Abilites: <i>${char.attributes.abilities}</i>`
