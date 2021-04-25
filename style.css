@@ -1,5 +1,6 @@
+
 html {
-    background-color: #fff8e1;
+    background-color: #d5c8ab;
     background-size: 600% 600%;
     background-attachment: fixed;
     height: 100%;
@@ -7,38 +8,88 @@ html {
     animation: TackyGradient 12s ease infinite;
     text-align: center;
   }
-  html * {
+  /* html * {
      font-family: sans-serif !important;
+  } */
+
+  h1 {
+    font-family: 'IM Fell English SC'; font-size: 45px;
+  }
+
+  h2 {
+    font-family: 'IM Fell English SC'; font-size: 35px;
+  }
+
+  h4 {
+    font-family: 'IM Fell Great Primer'; font-size: 20px;
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  body {
+    font-family: 'IM Fell Great Primer';
+    padding: 0px 10px;
+    margin-left: 160px;
+  }
+
+  #character-cards {
+    padding-left: 10.0%;
+    padding-right: 10.0%;
+    align-self: center;
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #8ba6a4;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #37190f;
+    display: block;
+  }
+
+  .sidenav a:hover {
+    color: #c73b0e;
   }
   
   .card {
     text-align: center;
-    border: rgb(11, 22, 170) solid 1px;
-    padding: 1rem;
+    border: #c73b0e solid 3px;
+    /* padding: 1rem; */
     width: 20rem;
     height: 25rem;
     display: inline-grid;
     margin: 2rem 2rem;
-    box-shadow: 4px 4px 4px 4px #026914;
+    box-shadow: 4px 4px #c73b0e;
     border-radius: 15px 50px;
   }
 
   .card-back {
     text-align: center;
-    border: rgb(11, 22, 170) solid 1px;
+    border: #c73b0e solid 3px;
     padding: 1rem;
     width: 20rem;
     height: 25rem;
     display: inline-grid;
     margin: 2rem 2rem;
-    box-shadow: 4px 4px 4px 4px #026914;
+    box-shadow: 4px 4px #c73b0e;
     border-radius: 50px 15px;
   }
 
   .character-avatar {
     justify-self: center;
-    height: 18rem;
-    width: 18rem;
+    height: 16rem;
+    width: 16rem;
   }
   
   button {
@@ -89,4 +140,9 @@ html {
     100% {
       background-position: 0% 50%;
     }
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
   }
