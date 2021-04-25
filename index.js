@@ -34,6 +34,8 @@ fetch('http://localhost:3000/characters')
                     card.append(p)
                     card.className = "card-back"
                 } else {
+                    const p = document.querySelector("p")
+                    p.remove()
                     card.className = "card"
                     card.id = char.id
                     img.src = avatar

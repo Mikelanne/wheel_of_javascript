@@ -21,7 +21,6 @@ html {
     margin: 2rem 2rem;
     box-shadow: 4px 4px 4px 4px #026914;
     border-radius: 15px 50px;
-    grid-column-gap: 5px
   }
 
   .card-back {
@@ -34,7 +33,6 @@ html {
     margin: 2rem 2rem;
     box-shadow: 4px 4px 4px 4px #026914;
     border-radius: 50px 15px;
-    grid-column-gap: 5px
   }
 
   .character-avatar {
