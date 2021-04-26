@@ -68,19 +68,21 @@ fetch('http://localhost:3000/locations')
     .then(data => renderLocations(data))
 
     function renderLocations(localResponse) {
-        localResponse.forEach(place => {
+        console.log(localResponse)
+        const local = localResponse.data
+        local.forEach(place => {
             const a = document.createElement('a')
             const locationBar = document.querySelector(".sidenav")
-            a.setAttribute('href', `#${place.name}` )
-            a.innerHTML = `${place.name}<br><br>`
+            a.setAttribute('href', `#${place.attributes.name}` )
+            a.innerHTML = `${place.attributes.name}<br><br>`
             locationBar.append(a)
             a.addEventListener("click", displayLocation)
 
             function displayLocation(e) { 
-                if (a.innerHTML === `${place.name}<br><br>`) {
-                    a.innerText = `${place.name}: ruled by ${place.leader}. ${place.description}`
+                if (a.innerHTML === `${place.attributes.name}<br><br>`) {
+                    a.innerText = `${place.attributes.name}: ruled by ${place.attributes.leader}. ${place.attributes.description}`
                 } else {
-                    a.innerHTML = `${place.name}<br><br>`
+                    a.innerHTML = `${place.attributes.name}<br><br>`
                 }
             }
         })
@@ -92,7 +94,6 @@ fetch('http://localhost:3000/locations')
         .then(data => renderGroups(data))
 
         function renderGroups(groupResponse) {
-            console.log(groupResponse)
             const groups = groupResponse.data
             const groupContainter = document.querySelector(".group-container")
             groups.forEach(group => {
