@@ -1,3 +1,5 @@
+const baseURL = 'http://localhost:3000'
+const charactersURL = baseURL + '/characters'
 const cardContainer = document.querySelector("#character-cards")
 const groupContainter = document.querySelector(".group-container")
 
@@ -9,7 +11,8 @@ const groupContainter = document.querySelector(".group-container")
 // }
 
 
-getCharacters()
+CharacterApi.getCharacters()
+
 
 // function renderCharacters(charResponse) {
 //     const characters = charResponse.data
