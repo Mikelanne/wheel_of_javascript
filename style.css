@@ -28,8 +28,7 @@ html {
 
   .card-text {
     font-family: 'IM Fell Great Primer';
-    font-size: 20px;
-    color: #253961;
+    font-size: 20px;;
   }
 
   body {
@@ -80,6 +79,18 @@ html {
     border-radius: 15px 50px;
   }
 
+  .card:hover {
+    text-align: center;
+    border: #253961 solid 3px;
+    /* padding: 1rem; */
+    width: 20rem;
+    height: 25rem;
+    display: inline-grid;
+    margin: 2rem 2rem;
+    box-shadow: 4px 4px #253961;
+    border-radius: 15px 50px;
+  }
+
   .card-back {
     text-align: center;
     border: #c73b0e solid 3px;
@@ -99,14 +110,15 @@ html {
   }
   
   button {
-    background-color: white;
+    background-color: #bf7532;
     border-radius: 0px 5px 5px 0px;
-    border: 1px solid rgb(40, 160, 230);
-    color: rgb(40, 160, 230);
+    border: 1px solid #905725;
     padding: 10px 20px;
+    margin: 1rem;
     text-align: center;
     display: inline-block;
     font-size: 16px;
+    font-family: 'IM Fell English SC';
   }
   
   .hover {
@@ -121,8 +133,8 @@ html {
     border-radius: 15px 50px;
   }
   
-  .btn:hover {
-    background-color: rgb(230, 240, 250);
+  button:hover {
+    background-color: #f7cf65;
   }
   
   input[type="text"] {

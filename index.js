@@ -56,7 +56,6 @@ fetch('http://localhost:3000/locations')
     .then(data => renderLocations(data))
 
     function renderLocations(localResponse) {
-        console.log(localResponse)
         localResponse.forEach(place => {
             const a = document.createElement('a')
             const locationBar = document.querySelector(".sidenav")
@@ -74,3 +73,20 @@ fetch('http://localhost:3000/locations')
             }
         })
     }
+
+
+    fetch('http://localhost:3000/groups')
+        .then(response => response.json())
+        .then(data => renderGroups(data))
+
+        function renderGroups(groupResponse) {
+            console.log(groupResponse)
+            const groups = groupResponse.data
+            const groupContainter = document.querySelector(".group-container")
+            groups.forEach(group => {
+                const groupName = group.attributes.name
+                const button = document.createElement("button")
+                button.innerText = groupName
+                groupContainter.append(button)
+            })
+        }
