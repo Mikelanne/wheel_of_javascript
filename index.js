@@ -12,7 +12,7 @@ const groupContainter = document.querySelector(".group-container")
 
 
 CharacterApi.getCharacters()
-
+LocationApi.getLocations()
 
 // function renderCharacters(charResponse) {
 //     const characters = charResponse.data

@@ -22,8 +22,6 @@ class Character {
         Character.all.push(this)
 
         this.renderCards()
-
-        // this.element.addEventListener("click", renderBackOfCards)
     }
 
     renderCards() {
@@ -63,7 +61,5 @@ class Character {
         }
 
     }
-
-
 
 }

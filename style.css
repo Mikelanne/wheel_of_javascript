@@ -94,7 +94,7 @@ html {
   .card-back {
     text-align: center;
     border: #c73b0e solid 3px;
-    /* padding: 1rem; */
+    padding: 1rem;
     width: 20rem;
     height: 25rem;
     display: inline-grid;
