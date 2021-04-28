@@ -41,10 +41,16 @@ class Character {
             this.element.lastElementChild.remove()
             const headerTwo = document.createElement("h4")
             const p = document.createElement("p")
+            const del = document.createElement("button")
+            const edit = document.createElement("button")
+            edit.innerText = "Edit"
+            del.innerText = "Delete"
             headerTwo.innerHTML = `<i>${this.title}</i>`
-            p.innerHTML = `ta'veren: <i> ${this.ta_veren}</i><br> Home: <i>${this.home}</i><br> Abilities: <i>${this.abilities}</i>`
+            p.innerHTML = `ta'veren: <i> ${this.ta_veren}</i><br> Home: <i>${this.home}</i><br> Abilities: <i>${this.abilities}</i><br>`
             this.element.append(headerTwo)
             this.element.append(p)
+            p.append(edit)
+            p.append(del)
         } else {
             this.element.className = "card"
             const h4 = this.element.querySelector("h4")
