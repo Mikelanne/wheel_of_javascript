@@ -79,6 +79,18 @@ html {
     border-radius: 15px 50px;
   }
 
+  .edit-character {
+    text-align: center;
+    border: #c73b0e solid 3px;
+    padding: 1rem;
+    width: 20rem;
+    height: 25rem;
+    display: inline-grid;
+    margin: 2rem 2rem;
+    box-shadow: 4px 4px #c73b0e;
+    border-radius: 50px 15px;
+  }
+
   .card:hover {
     text-align: center;
     border: #253961 solid 3px;
