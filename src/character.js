@@ -2,8 +2,6 @@ class Character {
 
     static all = []
 
-    static container = document.querySelector("#character-cards")
-
     constructor({id, name, ta_veren, abilities, title, home, group_id, image}){
         this.id = id
         this.name = name

@@ -19,8 +19,7 @@ class Location {
     }
 
     renderLocation() {
-        const container = document.querySelector(".sidenav")
-        container.append(this.element)
+        locationContainer.append(this.element)
         this.element.addEventListener("click", this.renderLocationInfo)
     }
 
