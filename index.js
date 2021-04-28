@@ -13,6 +13,8 @@ const groupContainter = document.querySelector(".group-container")
 
 CharacterApi.getCharacters()
 LocationApi.getLocations()
+GroupApi.getGroups()
+
 
 // function renderCharacters(charResponse) {
 //     const characters = charResponse.data
