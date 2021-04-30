@@ -64,6 +64,23 @@ class Character {
         }
     }
 
+    static filterByGroup(filteredGroup){
+        if (filteredGroup){
+            for (const character of Character.all){
+                if(character.groupId === parseInt(filteredGroup.id)){
+                    character.element.style.display = ""
+                } else {
+                    character.element.style.display = "none"
+                }
+            } 
+        } else {
+            for (const character of Character.all){
+                character.element.style.display = ""
+            }
+
+        }
+    }
+
     // createEditFields = (editButton) => {
     //     console.log(this)
     //     const card = this.element

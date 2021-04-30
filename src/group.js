@@ -29,7 +29,20 @@ class Group {
     }
 
     setActiveGroup = (e) => {
-        debugger
+        let filteredGroup
+
+        Group.all.forEach(g => {
+            if (this.element === g.element && !this.active) {
+                g.element.classList.add("activated")
+                g.active = true
+                filteredGroup = g
+            } else {
+                g.element.classList.remove('activated')
+                g.active = false
+            }
+        })
+
+        Character.filterByGroup(filteredGroup)
     }
 
 
