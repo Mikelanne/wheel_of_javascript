@@ -6,6 +6,7 @@ class Group {
         this.id = id
         this.name = name
         this.description = description
+        this.active = false
 
 
         this.element = document.createElement("button")
@@ -20,6 +21,15 @@ class Group {
 
     renderGroups(){
         groupContainter.append(this.element)
+        this.addListeners()
+    }
+
+    addListeners() {
+        this.element.addEventListener("click", this.setActiveGroup)
+    }
+
+    setActiveGroup = (e) => {
+        debugger
     }
 
 
