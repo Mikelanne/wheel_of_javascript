@@ -11,4 +11,29 @@ class LocationApi {
             })
         })
     }
+
+    static createLocation() {
+
+        const formData = {
+            name: locationNameInput.value,
+            leader: locationLeaderInput.value,
+            description: locationDescriptionInput.value 
+        }
+
+        const configObj = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(formData)
+        }
+
+        fetch(this.baseURL, configObj)
+        .then(r => r.json())
+        .then(data => {
+            const location = data.data
+            const l = new Location({id: location.id, ...location.attributes})
+        })
+    }
 }

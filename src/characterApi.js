@@ -41,34 +41,4 @@ class CharacterApi {
             // c.renderCards()
         })
     }
-
-
-    // static sendPatch(character){
-
-    //     let {name, ta_veren, abilities, title, home} = character
-    //     const characterInfo = {
-    //         name,
-    //         ta_veren,
-    //         abilities,
-    //         title,
-    //         home
-    //     }
-
-    //     const configObj = {
-    //         method: 'PATCH',
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //             Accept: "application/json"
-    //         },
-    //         body: JSON.stringify(characterInfo)
-    //     }
-
-    //     fetch(`${this.baseURL}/${character.id}`, configObj)
-    //     .then(r => r.json())
-    //     .then(json => {
-    //         debugger
-    //         character.renderCards()
-    //     })
-    // }
-
 }

@@ -156,8 +156,25 @@ html {
   input[type="text"] {
     padding: 10px 20px;
     border-radius: 5px 0px 0px 5px;
-    border: 1px solid rgb(220, 225, 230);
+    border: 1px solid #253961;
     font-size: 16px;
+    font-family: 'IM Fell Great Primer'
+  }
+
+  select {
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid #253961;
+    font-size: 16px;
+    font-family: 'IM Fell Great Primer'
+  }
+
+  input[type="submit"] {
+    font-family: 'IM Fell English SC';
+    padding: 10px 10px;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid #253961;
+    margin: 1rem;
+    font-size: 20px;
   }
   
   input:focus {
