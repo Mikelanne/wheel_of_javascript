@@ -76,7 +76,6 @@ class Character {
         } else {
             for (const character of Character.all){
                 character.element.style.display = ""
-                document.querySelector(".group-description").remove()
             }
         }
     }

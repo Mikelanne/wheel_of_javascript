@@ -21,6 +21,7 @@ class Group {
 
     renderGroups(){
         groupContainter.append(this.element)
+
         this.addListeners()
         this.addToDropDown()
     }
@@ -37,10 +38,6 @@ class Group {
                 g.element.classList.add("activated")
                 g.active = true
                 filteredGroup = g
-                const p = document.createElement("p")
-                p.innerHTML = `<i>${this.description}</i>`
-                p.className = "group-description"
-                groupContainter.append(p)
             } else {
                 g.element.classList.remove('activated')
                 g.active = false
@@ -48,6 +45,7 @@ class Group {
         })
 
         Character.filterByGroup(filteredGroup)
+        this.renderDescription(filteredGroup)
     }
 
     addToDropDown() {
@@ -59,6 +57,17 @@ class Group {
 
     characters(){
         return Character.all.filter((character) => character.group_id === parseInt(this.id))
+    }
+
+    renderDescription(){
+        const p = document.createElement("p")
+        if (this.element.classList == "activated"){
+            p.innerText = `${this.description}`
+            groupContainter.append(p)
+            this.element.addEventListener("click", () => {
+                p.remove()
+            })
+        }
     }
 
 
