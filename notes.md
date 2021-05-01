@@ -10,4 +10,4 @@ TO DO TO FINISH:
 [] Blog post
 
 
-[] new location form
+[x] new location form
