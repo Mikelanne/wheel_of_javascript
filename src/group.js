@@ -37,6 +37,10 @@ class Group {
                 g.element.classList.add("activated")
                 g.active = true
                 filteredGroup = g
+                const p = document.createElement("p")
+                p.innerHTML = `<i>${this.description}</i>`
+                p.className = "group-description"
+                groupContainter.append(p)
             } else {
                 g.element.classList.remove('activated')
                 g.active = false
@@ -51,6 +55,10 @@ class Group {
         group.value = this.id
         group.innerText = this.name
         groupDropdown.append(group)
+    }
+
+    characters(){
+        return Character.all.filter((character) => character.group_id === parseInt(this.id))
     }
 
 
