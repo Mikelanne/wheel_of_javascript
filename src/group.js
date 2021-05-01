@@ -22,6 +22,7 @@ class Group {
     renderGroups(){
         groupContainter.append(this.element)
         this.addListeners()
+        this.addToDropDown()
     }
 
     addListeners() {
@@ -43,6 +44,13 @@ class Group {
         })
 
         Character.filterByGroup(filteredGroup)
+    }
+
+    addToDropDown() {
+        const group = document.createElement("option")
+        group.value = this.id
+        group.innerText = this.name
+        groupDropdown.append(group)
     }
 
 

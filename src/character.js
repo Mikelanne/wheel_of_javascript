@@ -9,7 +9,7 @@ class Character {
         this.abilities = abilities
         this.title = title
         this.home = home
-        this.groupId = group_id
+        this.group_id = group_id
         this.image = image
 
         this.element = document.createElement("div")
@@ -67,7 +67,7 @@ class Character {
     static filterByGroup(filteredGroup){
         if (filteredGroup){
             for (const character of Character.all){
-                if(character.groupId === parseInt(filteredGroup.id)){
+                if(character.group_id === parseInt(filteredGroup.id)){
                     character.element.style.display = ""
                 } else {
                     character.element.style.display = "none"
@@ -77,7 +77,6 @@ class Character {
             for (const character of Character.all){
                 character.element.style.display = ""
             }
-
         }
     }
 

@@ -13,6 +13,8 @@ const taverenInput = document.querySelector("#ta_veren")
 const imageInput = document.querySelector("#image")
 const saveCharacter = document.querySelector("#submit")
 
+const groupDropdown = document.querySelector("#group_id")
+
 saveCharacter.addEventListener("click", handleFormSubmit)
 
 taverenInput.addEventListener("click", () => {

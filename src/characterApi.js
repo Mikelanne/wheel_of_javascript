@@ -14,13 +14,14 @@ class CharacterApi {
     }
 
     static createCharacter() {
-
         const formData = {
             name: nameInput.value,
             title: titleInput.value,
             home: homeInput.value,
             abilities: abilitiesInput.value,
-            ta_veren: taverenInput.value
+            ta_veren: taverenInput.value,
+            group_id: groupDropdown.value,
+            image: imageInput.value
         }
 
         const configObj = {
@@ -35,10 +36,9 @@ class CharacterApi {
         fetch(this.baseURL, configObj)
         .then(r => r.json())
         .then(data => {
-            const character = data.data 
+            const character = data.data
             const c = new Character({id: character.id, ...character.attributes})
-
-            c.renderCards()
+            // c.renderCards()
         })
     }
 
