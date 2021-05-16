@@ -5,7 +5,7 @@ const groupContainter = document.querySelector(".group-container")
 const locationContainer = document.querySelector(".sidenav")
 const characterForm = document.querySelector("#new-character-form")
 const locationForm = document.querySelector("#new-location-form")
-// const locationForm = document.querySelector(".new-location-form")
+const taverenButton = document.querySelector("#taveren-button")
 
 const homeInput = document.querySelector("#home")
 const abilitiesInput = document.querySelector("#abilities")
@@ -29,6 +29,8 @@ const groupDropdown = document.querySelector("#group_id")
 
 saveCharacter.addEventListener("click", handleCharacterFormSubmit)
 
+taverenButton.addEventListener("click", Character.showTaveren)
+
 taverenInput.addEventListener("click", () => {
     if (taverenInput.value === "false") {
         taverenInput.value = "true"
@@ -50,20 +52,6 @@ function handleLocationFormSubmit(e){
     LocationApi.createLocation()
     locationForm.reset()
 }
-
-// function addFormButton(){
-//     const button = document.createElement("button") 
-//     button.id = "new-location-form"
-//     button.innerText = "I discovered new land."
-//     button.addEventListener("click", renderLocationForm)
-//     locationContainer.append(button)
-// }
-
-// addFormButton()
-
-// function renderLocationForm(){
-//     console.log("hello")
-// }
 
 
 

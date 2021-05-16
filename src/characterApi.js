@@ -41,4 +41,30 @@ class CharacterApi {
             // c.renderCards()
         })
     }
+
+    static sendPatch(character) {
+
+        let {name, title, abilities} = character
+
+        const characterInfo = {
+            name,
+            title,
+            abilities
+        }
+
+        const configObj = {
+            method: 'PATCH',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(characterInfo)
+        }
+
+        fetch(`${this.baseURL}/${character.id}`, configObj)
+        .then(r => r.json())
+        .then(json => {
+            character.saveUpdate()
+        })
+    }
 }

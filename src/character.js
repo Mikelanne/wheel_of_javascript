@@ -36,21 +36,22 @@ class Character {
     }
 
     handleItemClick = (event) => {
-        if (this.element.className === "card") {
+        if (this.element.className === "card" && event.target.id !== "edit-button") {
             this.element.className = "card-back"
             this.element.lastElementChild.remove()
             const headerTwo = document.createElement("h4")
             headerTwo.className = "name"
             const p = document.createElement("p")
-            // const edit = document.createElement("button")
-            // edit.innerText = "Edit"
+            const edit = document.createElement("button")
+            p.id = "character-description"
+            edit.innerText = "Edit"
+            edit.id = "edit-button"
             headerTwo.innerHTML = `<i>${this.title}</i>`
             p.innerHTML = `ta'veren: <i class="ta_veren"> ${this.ta_veren}</i><br> Home: <i class="home">${this.home}</i><br> Abilities: <i class="abilities">${this.abilities}</i><br>`
             this.element.append(headerTwo)
             this.element.append(p)
-            // p.append(edit)
-            this.element.addEventListener("click", this.editCharacter)
-        } else {
+            p.append(edit)
+        } else if (this.element.className === "card-back" && event.target.id !== "edit-button" && event.target.type !== "text"){
             this.element.className = "card"
             const h4 = this.element.querySelector("h4")
             const p = this.element.querySelector("p")
@@ -61,6 +62,30 @@ class Character {
             img.src = avatar
             img.className = "character-avatar"
             this.element.append(img)
+        }
+        if (event.target.id === "edit-button"){
+            this.element.className = "edit-character"
+            const h2 = this.element.querySelector("h2")
+            const h4 = this.element.querySelector("h4")
+            const p = this.element.querySelector("p")
+            const avatar = this.image
+            const name = h2.innerText
+            const title = h4.innerText
+            const save = document.createElement("button")
+            save.innerText = "Save"
+            save.id = "save-button"
+            h2.remove()
+            h4.remove()
+            p.innerHTML = `<form id="edit-character-form">
+            <h2><label for='name'>Name: </label> <input type='text' id='edit-name' value='${name}'></h2><br>
+            <h4><label for='title'>Title: </label> <input type='text' id='edit-title' value='${title}'></h4>
+            <p><label for='home'>Home: </label>
+            <input type='text' id='edit-home' value='${this.home}'><br>
+            <label for='abilites'>Abilities: </label>
+            <input type='text' id='edit-abilities' value='${this.abilities}'><br></p>
+            </form>`
+            p.append(save)
+            save.addEventListener("click", this.saveUpdatedCharacter)
         }
     }
 
@@ -80,41 +105,38 @@ class Character {
         }
     }
 
-    // createEditFields = (editButton) => {
-    //     console.log(this)
-    //     const card = this.element
-    //     card.className = "edit-character"
-    //     // const ta = this.element.querySelector(".ta_veren")
-    //     const h = this.element.querySelector(".home")
-    //     const ab = this.element.querySelector(".abilities")
-    //     const header = this.element.querySelector("h2")
-    //     const headerTwo = this.element.querySelector("h4")
-    //     const button = editButton
+    saveUpdatedCharacter = (e) => {
 
-    //     // const ta_veren = this.element.querySelector(".ta_veren").innerText
-    //     const home = this.element.querySelector(".home").innerText
-    //     const abilities = this.element.querySelector(".abilities").innerText
-    //     const name = header.innerText
-    //     const title = headerTwo.innerText
+        e.preventDefault()
 
-    //     header.innerHTML = `<input type="text" name="name" class="edit-name" value="${name}">`
-    //     headerTwo.innerHTML = `<input type="text" name="title" class="edit-title" value="${title}">`
-    //     // ta.innerHTML = `<input type="text" name="ta_veren" class="edit-ta_veren" value="${ta_veren}">`
-    //     h.innerHTML = `<input type="text" name="home" class="edit-home" value="${home}">`
-    //     ab.innerHTML = `<input type="text" name="abilities" class="edit-abilities" value="${abilities}">`
-    //     button.innerText = "Save"
+        this.name = this.element.querySelector("#edit-name").value
+        this.title = this.element.querySelector("#edit-title").value
+        this.abilities = this.element.querySelector("#edit-abilities").value
+        this.home = this.element.querySelector("#edit-home").value
 
-    // }
+        CharacterApi.sendPatch(this)
+    }
 
-    // saveUpdatedCharacter = () => {
+    saveUpdate(){
+        const p = document.querySelector("p")
+        const save = document.querySelector("#save-button")
+        save.remove()
+        p.remove()
 
-    //     this.name = this.element.querySelector(".edit-name").value
-    //     this.title = this.element.querySelector(".edit-title").value
-    //     // this.ta_veren = this.element.querySelector(".edit-ta_veren").value
-    //     this.abilities = this.element.querySelector(".edit-abilities").value
-    //     this.home = this.element.querySelector(".edit-home").value
+        this.element.className = "card"
 
-    //     CharacterApi.sendPatch(this)
-    // }
+        this.renderCards()
+    }
+
+
+    // create a button that on click will show only the characters who are ta'veren
+
+    static showTaveren() {
+        const characters = Character.all.filter(character => character.ta_veren === true)
+        Character.all.forEach(c => c.element.style.display = "none")
+        for (const character of characters) {
+            character.element.style.display = ""
+        }
+    }
 
 }

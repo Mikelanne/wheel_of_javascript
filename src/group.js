@@ -45,7 +45,7 @@ class Group {
         })
 
         Character.filterByGroup(filteredGroup)
-        this.renderDescription(filteredGroup)
+        this.renderDescription()
     }
 
     addToDropDown() {
