@@ -131,12 +131,12 @@ class Character {
 
     // create a button that on click will show only the characters who are ta'veren
 
-    static showTaveren() {
-        const characters = Character.all.filter(character => character.ta_veren === true)
-        Character.all.forEach(c => c.element.style.display = "none")
-        for (const character of characters) {
-            character.element.style.display = ""
-        }
-    }
+    // static showTaveren() {
+    //     const characters = Character.all.filter(character => character.ta_veren === true)
+    //     Character.all.forEach(c => c.element.style.display = "none")
+    //     for (const character of characters) {
+    //         character.element.style.display = ""
+    //     }
+    // }
 
 }
